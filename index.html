@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Image Gallery</title>
+    <link rel="stylesheet" href="homework1.css">
+</head>
+<body>
+    <div class="gallery">
+        <div class="sub-img">
+            <img class="img active" src="1.png" alt="1" onclick="changeImage(this)">
+            <img class="img" src="2.png" alt="2" onclick="changeImage(this)">
+            <img class="img" src="3.png" alt="3" onclick="changeImage(this)">
+            <img class="img" src="4.png" alt="4" onclick="changeImage(this)">
+        </div>
+        <div class="main-image">
+            <img id="mainImage" src="1.png" alt="main">
+        </div>
+    </div>
+    <script>
+        function changeImage(pic) {
+    const mainImage = document.getElementById("mainImage");
+    mainImage.src = pic.src;
+
+    const thumbnails = document.querySelectorAll(".thumbnail");
+    thumbnails.forEach((img) => img.classList.remove("active"));
+
+    pic.classList.add("active");
+}
+    </script>
+</body>
+</html>
